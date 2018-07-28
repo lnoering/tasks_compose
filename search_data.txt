@@ -1,0 +1,8 @@
+GET /_search
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+GET /gallery/_search?q=loja:Loja x

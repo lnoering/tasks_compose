@@ -1,0 +1,35 @@
+DELETE gallery
+
+PUT gallery
+{
+    "mappings": {
+        "image": { 
+            "properties": {
+                "date":  {
+                    "type":   "date", 
+                    "format": "strict_date_optional_time||epoch_millis"
+                },
+                "author":    { "type": "text"  }, 
+                "marca":     { "type": "text"  }, 
+                "loja":     { "type": "text"  },
+                "location":      
+                { 
+                    "type": "nested",
+                    "properties":{
+                        "points":{
+                            "type":"nested",
+                            "properties":{
+                                "lat":{ "type":"double"},
+                                "long":{"type":"double"}
+                            }
+                        }
+                    }
+                },
+                "tags": { "type":"text" },
+                "image":  {"type":"binary"} 
+            }
+        }
+    }
+}
+
+GET _all/_mapping
