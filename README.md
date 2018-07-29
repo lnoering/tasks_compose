@@ -17,11 +17,10 @@
 	chmod +x /usr/local/bin/composer
 	composer -V
  ```
- - nodejs 
+ - nodejs and npm (https://nodejs.org/en/download/package-manager/)
+ Obs.: For amazon linux
  ```bash
- 	yum install nodejs --enablerepo=epel
- ```
- - npm 
- ```bash
- 	yum install npm --enablerepo=epel
+	curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+	yum -y install nodejs
+	yum install gcc-c++ make
  ```
